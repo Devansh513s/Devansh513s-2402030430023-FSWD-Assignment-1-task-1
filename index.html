@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devansh | Personal Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 scroll-smooth">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full z-20">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      
+      <h1 class="text-2xl font-bold text-primary">Devansh</h1>
+
+      <!-- Desktop Menu -->
+      <nav class="space-x-6 hidden md:block">
+        <a href="#home" class="hover:text-primary">Home</a>
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#projects" class="hover:text-primary">Projects</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="#home" class="block px-4 py-3 hover:bg-gray-100">Home</a>
+      <a href="#about" class="block px-4 py-3 hover:bg-gray-100">About</a>
+      <a href="#projects" class="block px-4 py-3 hover:bg-gray-100">Projects</a>
+      <a href="#contact" class="block px-4 py-3 hover:bg-gray-100">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white pt-24">
+    <div class="text-center px-4">
+      <h2 class="text-5xl font-bold mb-4">Hi, I'm Devansh 👋</h2>
+      <p class="text-xl mb-6">Web Developer | Designer | Tech Enthusiast</p>
+      <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+        View My Work
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-primary">About Me</h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        I am a passionate web developer skilled in HTML5, CSS3, Tailwind CSS, and JavaScript.
+        Along with frontend development, I have hands-on experience working with 
+        <strong>PHP</strong> and <strong>MySQL</strong> to build dynamic and database-driven web applications.
+        I enjoy creating responsive and user-friendly websites while continuously improving
+        my full-stack development skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-12">My Projects</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-semibold mb-3">Personal Portfolio</h3>
+          <p class="text-gray-600 mb-4">
+            A responsive personal portfolio website built using HTML5 and Tailwind CSS
+            to showcase my skills, projects, and contact details.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-semibold mb-3">Educonnect</h3>
+          <p class="text-gray-600 mb-4">
+            Educonnect is an educational platform designed to connect students
+            with structured learning resources using modern web technologies.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-primary mb-6">Contact Me</h2>
+
+      <form class="space-y-6">
+        <input type="text" placeholder="Your Name"
+          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"/>
+
+        <input type="email" placeholder="Your Email"
+          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"/>
+
+        <textarea rows="5" placeholder="Your Message"
+          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+
+        <button type="submit"
+          class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>© 2026 Devansh | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    // Toggle menu
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when link clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
+
+</body>
+</html>
